@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>product_admin</title>
+    <meta charset="utf-8">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="tables.css">
+</head>
+
+
+
+
+<body style="background-image: url('g.jpg');">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/customer_admin">CustomerDetails</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/product_admin">ProductDetails</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/feedback_admin">FeedbackDetails</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/shipping">ShippingDetails</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/payment">PaymentDetails</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cancellation">CancellationDetails</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/customer_addr">CustomerLocationDetails</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">Queries</a>
+                </li>
+        
+                
+            </ul>
+        </div>
+    </nav>
+
+
+    <h2>ECOMMERCE WEBSITE</h2>
+    <br><br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table>
+                    <th>PRODUCT ID</th>
+                    <th>DESCRIPTION</th>
+                    <th>PRICE</th>
+                    <th>BRAND</th>
+                    <th>ADMIN ID</th>
+
+                    <% for(var i=0; i < arr.length;i++ ){ %>
+                        <tr>
+                            <td>
+                                <%= arr[i].product_id %>
+                            </td>
+                            <td>
+                                <%= arr[i].description %>
+                            </td>
+                            <td>
+                                <%= arr[i].product_cost %>
+                            </td>
+                            <td>
+                                <%= arr[i].brand %>
+                            </td>
+                            <td>
+                                <%= arr[i].admin_id %>
+                            </td>
+                        </tr>
+                        <% } %>
+                </table>
+
+            </div>
+
+            <div class="col">
+
+                <form method="post">
+                
+                    <h3>ADD PRODUCT</h3>
+                    
+
+                    <label for="description" class="form-label">DESCRIPTION</label>
+                    <textarea name="description" id="" cols="30" rows="2" class="form-control" autocomplete="off" required="required"></textarea>
+                    <br>
+
+                    <label for="product_cost" class="form-label">PRICE</label>
+                    <input type="text" name="product_cost" id="" class="form-control" autocomplete="off" required="required">
+                    <br>
+                
+                    <label for="brand" class="form-label">BRAND</label>
+                    <input type="text" name="brand" id="" class="form-control" autocomplete="off"> 
+                    <br>
+                
+                    <label for="admin_id" class="form-label">ADMIN ID</label>
+                    <input type="text" name="admin_id" id="" class="form-control" autocomplete="off" required="required">
+                    <br>
+            
+                    <br>
+                    <button type="submit">ADD PRODUCT</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+   
+    
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+table,th,td{
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+    box-shadow: 2px,2px;
+}
+
+
+h1,h2,h3,h4,h5,h6{
+    text-align: center;
+    padding: 5px;
+}
+
+
+.tbl
+{
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+form{
+    text-align: center;
+}
